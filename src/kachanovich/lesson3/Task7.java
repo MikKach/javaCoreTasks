@@ -3,7 +3,7 @@ package kachanovich.lesson3;
 import java.util.Scanner;
 
 public class Task7 {
-    public static void main(String[] args) {
+    public static void main(String[] args) { //TODO переделать
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите количество программистов: ");
         int numberProgrammers = scanner.nextInt();
