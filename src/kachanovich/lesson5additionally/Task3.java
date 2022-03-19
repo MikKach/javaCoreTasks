@@ -3,9 +3,10 @@ package kachanovich.lesson5additionally;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Task1 {
+public class Task3 {
     /*
-    1) Найти произведение элементов, кратных 3.
+    3) Найти средне арифметическое элементов массива, превосходящих некоторое
+число С.
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -26,14 +27,17 @@ public class Task1 {
             System.out.printf("%d ", array[i]);
         }
         System.out.println();
-        long mult = 1;
+        System.out.print("Введите число от 1 до 100: ");
+        int numC = scanner.nextInt();
+        int average = 0;
+        int num = 0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 3 == 0) {
-                System.out.printf("%d ",array[i]);
-                mult *= array[i];
+            if (array[i] > numC) {
+                System.out.printf("%d ", array[i]);
+                average += array[i];
+                num++;
             }
         }
-        System.out.println();
-        System.out.printf("Произведение элементов кратных 3 равно %d\n", mult);
+        System.out.printf("\nСреднее арифметическое %d", average / num);
     }
 }

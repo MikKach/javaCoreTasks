@@ -3,9 +3,9 @@ package kachanovich.lesson5additionally;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Task1 {
+public class Task7 {
     /*
-    1) Найти произведение элементов, кратных 3.
+    7) Подсчитать, сколько раз встречается элемент с заданным значением.
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -26,14 +26,14 @@ public class Task1 {
             System.out.printf("%d ", array[i]);
         }
         System.out.println();
-        long mult = 1;
+        int element = random.nextInt(0,100);
+        System.out.println(element);
+        int number=0;
         for (int i = 0; i < array.length; i++) {
-            if (array[i] % 3 == 0) {
-                System.out.printf("%d ",array[i]);
-                mult *= array[i];
+            if(array[i] == element){
+                number++;
             }
         }
-        System.out.println();
-        System.out.printf("Произведение элементов кратных 3 равно %d\n", mult);
+        System.out.printf("Элемент встречается в массиве %d раз.\n",number);
     }
 }

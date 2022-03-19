@@ -3,9 +3,9 @@ package kachanovich.lesson5additionally;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Task1 {
+public class Task6 {
     /*
-    1) Найти произведение элементов, кратных 3.
+    6) Проверить, различны ли все элементы массива.
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -26,14 +26,14 @@ public class Task1 {
             System.out.printf("%d ", array[i]);
         }
         System.out.println();
-        long mult = 1;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] % 3 == 0) {
-                System.out.printf("%d ",array[i]);
-                mult *= array[i];
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = i + 1; j < array.length; j++) {
+                if (array[i] == array[j]) {
+                    System.out.println("Имеются одинаковые элементы");
+                    i = array.length - 1;
+                    break;
+                }
             }
         }
-        System.out.println();
-        System.out.printf("Произведение элементов кратных 3 равно %d\n", mult);
     }
 }
