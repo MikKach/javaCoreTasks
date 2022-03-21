@@ -3,12 +3,10 @@ package kachanovich.lesson5MultiArrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Task1 {
+public class Task2 {
     /*
-    Создаём квадратную матрицу, размер вводим с клавиатуры. Заполняем
-случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде
-матрицы).
-1) Почитать сумму четных элементов стоящих на главной диагонали.
+    2)Вывести нечетные элементы находящиеся под главной
+диагональю(включительно).
      */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -25,15 +23,14 @@ public class Task1 {
             }
             System.out.println();
         }
-
         int sum = 0;
+        System.out.printf("Нечетные элементы находящиеся под главной диагональю(включительно)\n");
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                if (i == j && matrix[i][j] % 2 == 0) {
-                    sum += matrix[i][i];
+                if (j <= i && matrix[i][j] % 2 != 0) {
+                    System.out.printf("%d ",matrix[i][j]);
                 }
             }
         }
-        System.out.printf("Сумма четных элементов стоящих на главной диагонали %d", sum);
     }
 }
