@@ -1,66 +1,9 @@
 package kachanovich.lesson5MultiArrays.seaBattle;
 
 import java.util.Random;
-import java.util.Scanner;
 
-public class SeaBattle {
+public class SeaBattle2 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите имя первого игрока: ");
-        String playerOne = scanner.next();
-        scanner.nextLine();
-        System.out.print("Введите имя второго игрока: ");
-        String playerTwo = scanner.next();
-        scanner.nextLine();
-        System.out.printf("Поле игрока %s cоздано\n", playerOne);
-        String[][] fieldPlayerOne = fieldPlayerOne();
-        System.out.printf("Поле игрока %s cоздано\n", playerTwo);
-        String[][] fieldPlayerTwo = fieldPlayerOne();
-        System.out.print("Показать поле? (y/n)");
-        String answerField = scanner.next();
-        System.out.println(answerField);
-        if (answerField == "y" || answerField == "Y") {
-            startMenu(playerOne, playerTwo, fieldPlayerOne, fieldPlayerTwo);
-        }
-
-
-    }
-
-    public static void startMenu(String playerOne, String playerTwo, String[][] fieldPlayerOne, String[][] fieldPlayerTwo) {
-        while (true) {
-            Scanner scanner = new Scanner(System.in);
-            System.out.printf("1 - Поле игрока %s\n", playerOne);
-            System.out.printf("2 - Поле игрока %s\n", playerTwo);
-            System.out.printf("3 - Игра\n");
-            int answerFieldPlayer = scanner.nextInt();
-            switch (answerFieldPlayer) {
-                case 1: {
-                    printField(fieldPlayerOne);
-                    break;
-                }
-                case 2: {
-                    printField(fieldPlayerTwo);
-                    break;
-                }
-            }
-            if (answerFieldPlayer == 3) {
-                break;
-            }
-        }
-    }
-
-    public static void printField(String[][] array) {
-        // выводим расположение кораблей
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j]);
-            }
-            System.out.println();
-        }
-        System.out.println();
-    }
-
-    public static String[][] fieldPlayerOne() {
         Random random = new Random();
 
         //создаем поле
@@ -68,8 +11,11 @@ public class SeaBattle {
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[i].length; j++) {
                 field[i][j] = "-";
+                System.out.print(field[i][j]);
             }
+            System.out.println();
         }
+        System.out.println();
 
         // расставляем корабли
         int indexX;
@@ -106,7 +52,7 @@ public class SeaBattle {
                                 // располагаем корабль
                                 if (marker) {
                                     for (int k = 0; k <= numberShipDecks; k++) {
-                                        field[indexX][indexY + k] = "O";
+                                        field[indexX][indexY + k] = "X";
                                     }
 
                                     // обводим корабль маркерами "0"
@@ -115,7 +61,7 @@ public class SeaBattle {
                                         y = indexY + k;
                                         for (int i = (x - 1); i < (x + 2); i++) {
                                             for (int j = (y - 1); j < (y + 2); j++) {
-                                                if (i >= 0 && i <= 9 && j >= 0 && j <= 9 && field[i][j] != "O") {
+                                                if (i >= 0 && i <= 9 && j >= 0 && j <= 9 && field[i][j] != "X") {
                                                     field[i][j] = "*";
                                                 }
                                             }
@@ -141,7 +87,7 @@ public class SeaBattle {
                                 // располагаем корабль
                                 if (marker) {
                                     for (int k = 0; k <= numberShipDecks; k++) {
-                                        field[indexX + k][indexY] = "O";
+                                        field[indexX + k][indexY] = "X";
                                     }
 
                                     // обводим корабль маркерами "0"
@@ -150,7 +96,7 @@ public class SeaBattle {
                                         y = indexY;
                                         for (int i = (x - 1); i < (x + 2); i++) {
                                             for (int j = (y - 1); j < (y + 2); j++) {
-                                                if (i >= 0 && i <= 9 && j >= 0 && j <= 9 && field[i][j] != "O") {
+                                                if (i >= 0 && i <= 9 && j >= 0 && j <= 9 && field[i][j] != "X") {
                                                     field[i][j] = "*";
                                                 }
                                             }
@@ -176,7 +122,7 @@ public class SeaBattle {
                                 // располагаем корабль
                                 if (marker) {
                                     for (int k = 0; k <= numberShipDecks; k++) {
-                                        field[indexX][indexY - k] = "O";
+                                        field[indexX][indexY - k] = "X";
                                     }
 
                                     // обводим корабль маркерами "0"
@@ -185,7 +131,7 @@ public class SeaBattle {
                                         y = indexY - k;
                                         for (int i = (x - 1); i < (x + 2); i++) {
                                             for (int j = (y - 1); j < (y + 2); j++) {
-                                                if (i >= 0 && i <= 9 && j >= 0 && j <= 9 && field[i][j] != "O") {
+                                                if (i >= 0 && i <= 9 && j >= 0 && j <= 9 && field[i][j] != "X") {
                                                     field[i][j] = "*";
                                                 }
                                             }
@@ -212,7 +158,7 @@ public class SeaBattle {
                                 // располагаем корабль
                                 if (marker) {
                                     for (int k = 0; k <= numberShipDecks; k++) {
-                                        field[indexX - k][indexY] = "O";
+                                        field[indexX - k][indexY] = "X";
                                     }
 
                                     // обводим корабль маркерами "0"
@@ -221,7 +167,7 @@ public class SeaBattle {
                                         y = indexY;
                                         for (int i = (x - 1); i < (x + 2); i++) {
                                             for (int j = (y - 1); j < (y + 2); j++) {
-                                                if (i >= 0 && i <= 9 && j >= 0 && j <= 9 && field[i][j] != "O") {
+                                                if (i >= 0 && i <= 9 && j >= 0 && j <= 9 && field[i][j] != "X") {
                                                     field[i][j] = "*";
                                                 }
                                             }
@@ -236,7 +182,7 @@ public class SeaBattle {
                 }
             }
         }
-        // удаляем маркеры *
+
         for (int i = 0; i < field.length; i++) {
             for (int j = 0; j < field[i].length; j++) {
                 if (field[i][j] == "*") {
@@ -244,7 +190,14 @@ public class SeaBattle {
                 }
             }
         }
-        return field;
+        // выводим расположение кораблей
+        System.out.println("Получили");
+        for (int i = 0; i < field.length; i++) {
+            for (int j = 0; j < field[i].length; j++) {
+                System.out.print(field[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println();
     }
-
 }
