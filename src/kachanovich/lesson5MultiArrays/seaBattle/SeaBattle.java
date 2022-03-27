@@ -23,7 +23,6 @@ public class SeaBattle {
             startMenu(playerOne, playerTwo, fieldPlayerOne, fieldPlayerTwo);
         }
 
-
     }
 
     public static void startMenu(String playerOne, String playerTwo, String[][] fieldPlayerOne, String[][] fieldPlayerTwo) {

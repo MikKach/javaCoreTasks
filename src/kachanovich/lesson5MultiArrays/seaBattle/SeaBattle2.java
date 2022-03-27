@@ -67,7 +67,6 @@ public class SeaBattle2 {
                                             }
                                         }
                                     }
-
                                     countShip--;
                                     break;
                                 }
@@ -102,7 +101,6 @@ public class SeaBattle2 {
                                             }
                                         }
                                     }
-
                                     countShip--;
                                     break;
                                 }
@@ -137,8 +135,6 @@ public class SeaBattle2 {
                                             }
                                         }
                                     }
-
-
                                     countShip--;
                                     break;
                                 }
