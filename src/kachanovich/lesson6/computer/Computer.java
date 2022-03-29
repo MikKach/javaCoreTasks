@@ -69,7 +69,7 @@ public class Computer {
         }
     }
 
-    public void turhOffComputer(){
+    public void turhOffComputer() {
         if (this.turn == false) {
             System.out.println("Компьютер не работает, выключать не надо.");
             return;
@@ -97,4 +97,7 @@ public class Computer {
         }
     }
 
+    public int getResource() {
+        return resource;
+    }
 }
