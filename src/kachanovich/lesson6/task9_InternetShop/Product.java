@@ -1,4 +1,4 @@
-package kachanovich.lesson6.task9;
+package kachanovich.lesson6.task9_InternetShop;
 
 import java.util.Objects;
 
@@ -12,6 +12,11 @@ public class Product {
     public Product() {
     }
 
+    public Product(String productName, int price) {
+        this.productName = productName;
+        this.price = price;
+        this.rating = 0;
+    }
     public Product(String productName, int price, int rating) {
         this.productName = productName;
         this.price = price;

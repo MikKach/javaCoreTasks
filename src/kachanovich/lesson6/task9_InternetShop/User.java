@@ -1,4 +1,4 @@
-package kachanovich.lesson6.task9;
+package kachanovich.lesson6.task9_InternetShop;
 
 import java.util.Objects;
 

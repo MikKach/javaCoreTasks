@@ -1,6 +1,4 @@
-package kachanovich.lesson6.task9;
-
-import java.util.Arrays;
+package kachanovich.lesson6.task9_InternetShop;
 
 public class InternetShop {
     private User[] userArray;
@@ -36,7 +34,6 @@ public class InternetShop {
     }
 
     public void setUserArray(User... users) {
-        this.userArray = userArray;
         User[] temporaryArray = new User[this.userArray.length + users.length];
         int count = 0;
         for (int i = 0; i < this.userArray.length; i++) {

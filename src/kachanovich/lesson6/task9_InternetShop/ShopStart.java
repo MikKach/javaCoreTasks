@@ -1,6 +1,4 @@
-package kachanovich.lesson6.task9;
-
-import java.util.Arrays;
+package kachanovich.lesson6.task9_InternetShop;
 
 public class ShopStart {
     public static void main(String[] args) {
