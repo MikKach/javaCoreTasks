@@ -37,7 +37,7 @@ public class MenuShop {
                 }
             }
             if (num != 1 && num != 2) {
-                System.out.println("Неверный пункт меню");
+                System.out.print("Неверный пункт меню\n");
             }
         }
     }
@@ -50,7 +50,7 @@ public class MenuShop {
         scanner.nextLine();
         for (int i = 0; i < internetShop.getUserArray().length; i++) {
             if (internetShop.getUserArray()[i].getLogin().equals(login)) {
-                System.out.println("Такой логин существует");
+                System.out.print("Такой логин существует\n");
                 menuStart();
             }
         }
@@ -131,13 +131,13 @@ public class MenuShop {
     }
 
     private void menuAddNewCategory(User user) {
-        System.out.println("Создание нового каталога");
+        System.out.print("Создание нового каталога\n");
         System.out.print("Введите название нового каталога: ");
         String newCategory = scanner.next();
         scanner.nextLine();
         for (int i = 0; i < internetShop.getCategoryArray().length; i++) {
             if (internetShop.getCategoryArray()[i].getCategoryName().equals(newCategory)) {
-                System.out.println("Такой каталог существует");
+                System.out.print("Такой каталог существует\n");
                 menuListCategory(user);
             }
         }

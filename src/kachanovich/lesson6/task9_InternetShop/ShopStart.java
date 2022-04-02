@@ -18,7 +18,8 @@ public class ShopStart {
         biscuitCategory.setProductsArray(biscuit1,biscuit2,biscuir3,biscuit4);
         User user1 = new User("Mik","123");
         User user2 = new User("Sam","123");
-        internetShop.setUserArray(user1,user2);
+        User manager = new User("One", "123");
+        internetShop.setUserArray(user1,user2,manager);
         MenuShop menuShop = new MenuShop(internetShop);
         menuShop.menuStart();
 
