@@ -53,18 +53,5 @@ public class Category {
         return Objects.equals(categoryName, category.categoryName) && Arrays.equals(productsArray, category.productsArray);
     }
 
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(categoryName);
-        result = 31 * result + Arrays.hashCode(productsArray);
-        return result;
-    }
 
-    @Override
-    public String toString() {
-        return "Category{" +
-                "categoryName='" + categoryName + '\'' +
-                ", productsArray=" + Arrays.toString(productsArray) +
-                '}';
-    }
 }
