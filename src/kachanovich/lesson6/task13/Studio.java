@@ -1,6 +1,6 @@
 package kachanovich.lesson6.task13;
 
-public class Studio {//TODO finish the logic
+public class Studio {
 
 
 
