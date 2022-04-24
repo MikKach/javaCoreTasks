@@ -1,9 +1,10 @@
 package kachanovich.lesson6.task9_InternetShop;
 
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Category {
+public class Category implements Serializable {
     private String categoryName;
     private Product[] productsArray;
 

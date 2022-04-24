@@ -1,8 +1,9 @@
 package kachanovich.lesson6.task9_InternetShop;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Product {
+public class Product implements Serializable {
 
     private String productName;
     private int price;

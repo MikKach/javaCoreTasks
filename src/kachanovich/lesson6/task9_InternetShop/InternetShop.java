@@ -1,6 +1,8 @@
 package kachanovich.lesson6.task9_InternetShop;
 
-public class InternetShop {
+import java.io.Serializable;
+
+public class InternetShop implements Serializable {
     private User[] userArray;
     private Category[] categoryArray;
 

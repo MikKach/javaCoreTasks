@@ -1,5 +1,9 @@
 package kachanovich.lesson6.task9_InternetShop;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 public class MenuShop {
@@ -12,6 +16,16 @@ public class MenuShop {
 
     }
 
+    public void menuExit(){
+        try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("internetShop.bin"))) {
+            objectOutputStream.writeObject(internetShop);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.exit(0);
+    }
     public void menuStart() {
         while (true) {
             System.out.print("\n");
@@ -27,13 +41,12 @@ public class MenuShop {
             switch (num) {
                 case 1: {
                     menuEntrance();
-                    System.exit(0);
                 }
                 case 2: {
                     menuNewUser();
                 }
                 case 3: {
-                    System.exit(0);
+                    menuExit();
                 }
             }
             if (num != 1 && num != 2) {
@@ -104,7 +117,7 @@ public class MenuShop {
             scanner.nextLine();
             switch (num) {
                 case 1: {
-                    System.exit(0);
+                    menuExit();
                 }
                 case 2: {
                     menuStart();
@@ -174,7 +187,7 @@ public class MenuShop {
             scanner.nextLine();
             switch (num) {
                 case 1: {
-                    System.exit(0);
+                    menuExit();
                 }
                 case 2: {
                     menuStart();
@@ -269,7 +282,7 @@ public class MenuShop {
             scanner.nextLine();
             switch (num) {
                 case 1: {
-                    System.exit(0);
+                    menuExit();
                 }
                 case 2: {
                     menuStart();

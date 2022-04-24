@@ -1,8 +1,9 @@
 package kachanovich.lesson6.task9_InternetShop;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Basket {
+public class Basket implements Serializable {
     private Product[] buyProduct;
 
     public Basket() {
