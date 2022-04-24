@@ -3,6 +3,7 @@ package kachanovich.lesson6.task9_InternetShop;
 import java.io.Serializable;
 
 public class InternetShop implements Serializable {
+    static final long serialVersionUID = 1;
     private User[] userArray;
     private Category[] categoryArray;
 

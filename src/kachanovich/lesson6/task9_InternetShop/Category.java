@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class Category implements Serializable {
+    static final long serialVersionUID = 1;
     private String categoryName;
     private Product[] productsArray;
 

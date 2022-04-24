@@ -7,6 +7,7 @@ import java.io.ObjectOutputStream;
 import java.util.Scanner;
 
 public class MenuShop {
+    static final long serialVersionUID = 1;
     Scanner scanner = new Scanner(System.in);
     InternetShop internetShop;
     User user;
