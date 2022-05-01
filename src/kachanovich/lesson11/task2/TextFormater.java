@@ -4,7 +4,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
 
 public class TextFormater {
     /*
@@ -77,5 +76,47 @@ public class TextFormater {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static boolean wordInLine(String[] arrayLine, String word) {
+        boolean bool = false;
+        for (String wordLine : arrayLine) {
+            bool = true;
+            if (word.length() > wordLine.length()) {
+                continue;
+            }
+            for (int i = 0; i < word.length(); i++) {
+                if (word.charAt(i) != wordLine.charAt(i)) {
+                    bool = false;
+                    break;
+                }
+            }
+            if (bool) {
+                return true;
+            }
+        }
+        return bool;
+    }
+
+    public static void censor(String text, String blackList) {
+        StringBuilder censorString = new StringBuilder();
+        boolean bool;
+        int nyumStringCensor = 0;
+        String[] arrayText = text.split("\\.");
+        String[] arrayBlackList = blackList.split("\n");
+        int num = 0;
+        for (String line : arrayText) {
+            String[] arrayLine = line.split(" ");
+            for (String word : arrayBlackList) {
+                if (wordInLine(arrayLine, word)) {
+                    num++;
+                    censorString.append(line + ".");
+                    break;
+                }
+            }
+        }
+        text = censorString.toString();
+        writeStringInFile(text);
+
     }
 }

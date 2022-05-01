@@ -63,9 +63,5 @@ public class Matrix {
         }
     }
 
-    public void matrixMultiplication(double[][] matrix) {//TODO
-        if (column ==matrix.length){
 
-        }
-    }
 }

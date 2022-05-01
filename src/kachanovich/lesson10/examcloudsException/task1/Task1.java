@@ -1,6 +1,6 @@
 package kachanovich.lesson10.examcloudsException.task1;
 
-public class Task1 { //TODO logic
+public class Task1 {
     private String login;
     private String password;
     private String confirmPassword;
