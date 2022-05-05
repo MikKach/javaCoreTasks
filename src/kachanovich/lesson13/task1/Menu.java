@@ -1,4 +1,4 @@
-package kachanovich.lesson13.task1Second;
+package kachanovich.lesson13.task1;
 
 import java.util.Map;
 import java.util.Scanner;
@@ -44,12 +44,11 @@ public class Menu {
                     break;
                 }
                 case 4: {
-                    System.out.println("вывод отсортированых студентов");
-                    menuSort();
+                    studentListInMap.sortNameAndAge();
                     break;
                 }
-                case 5: {
-                    System.out.println("уникальные студенты");
+                case 5: {//TODO доделать
+                    studentListInMap.uniqueFaculty();
                     break;
                 }
                 case 6: {
@@ -57,30 +56,6 @@ public class Menu {
                     System.out.println("Работа завершена...");
                     System.out.println("===========================================================");
                     System.exit(0);
-                }
-            }
-        }
-    }
-
-    private void menuSort() {//TODO
-        while (true) {
-            System.out.println("==========================");
-            System.out.println("1 - сортировка по именам");
-            System.out.println("2 - сортировка по возрасту");
-            System.out.println("3 - предыдущее меню");
-            System.out.println("==========================");
-            switch (inputNumber(3)){
-                case 1:{
-                    System.out.println("сортировка по имени");
-                    studentListInMap.sortByName();
-                    break;
-                }
-                case 2:{
-                    System.out.println("сортировка по возрасту");
-                    break;
-                }
-                case 3:{
-                    menuStart();
                 }
             }
         }

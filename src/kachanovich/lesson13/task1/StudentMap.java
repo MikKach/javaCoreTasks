@@ -1,6 +1,6 @@
-package kachanovich.lesson13.task1Second;
+package kachanovich.lesson13.task1;
 
-import kachanovich.lesson13.task1Second.comparator.NameComparator;
+import kachanovich.lesson13.task1.comparator.NameAndAgeComparator;
 
 import java.util.*;
 
@@ -33,15 +33,44 @@ public class StudentMap {
 
     public void deleteStudent() {
         Integer key = returnID();
-        studentMap.remove(key);
+        System.out.printf("Удалить студента ID %d? (y/n)\n",key);
+        String str = scanner.next();
+        scanner.nextLine();
+        if (str.equalsIgnoreCase("y")) {
+            studentMap.remove(key);
+        }
     }
 
-    public void sortByName() {//TODO
+    public void sortNameAndAge() {
         List<Student> arrayListStudent = new ArrayList<>(studentMap.values());
-        Collections.sort(arrayListStudent,new NameComparator());
+        Collections.sort(arrayListStudent,new NameAndAgeComparator());
         printStudentList(arrayListStudent);
     }
 
+    public void uniqueFaculty(){
+        Set<String> facultySet = new LinkedHashSet<>();
+        Set<String> nameSet = new LinkedHashSet<>();
+        Set<Integer> ageSet = new LinkedHashSet<>();
+        for (Student el: studentMap.values()) {
+            facultySet.add(el.getFaculty());
+            nameSet.add(el.getName());
+            ageSet.add(el.getAge());
+        }
+        for (String el : nameSet) {
+            System.out.println(el);
+        }
+        int num = 0;
+
+        System.out.println("===============================");
+        for (String nameFaculty: facultySet) {
+            System.out.printf("На %s учатся\n",nameFaculty);
+            for (Student student: studentMap.values()) {
+                if (student.getFaculty().equals(nameFaculty)){
+                    student.printStudent();
+                }
+            }
+        }
+    }
     public void printStudentList(List<Student> list ) {
         System.out.printf("%-5s%-12s%-10s%-12s%-4s\n", "ID", "Имя", "Возраст", "Факультет", "Курс");
         System.out.println("===========================================");

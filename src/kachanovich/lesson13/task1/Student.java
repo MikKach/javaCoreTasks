@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Random;
 
-public class Student {
+public class Student implements Comparable<Student>{
     private static int ID = 0;
 
     private int idStudent;
@@ -126,5 +126,10 @@ public class Student {
                 ", faculty='" + faculty + '\'' +
                 ", course=" + course +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Student o) {
+        return 0;
     }
 }
