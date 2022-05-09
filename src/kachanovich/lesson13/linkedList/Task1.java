@@ -2,7 +2,7 @@ package kachanovich.lesson13.linkedList;
 
 import java.util.LinkedList;
 
-public class Task1 {
+public class Task1 {//TODO
     public static void main(String[] args) {
         LinkedList<String> linkedList = new LinkedList<>();
         linkedList.add("Red");
