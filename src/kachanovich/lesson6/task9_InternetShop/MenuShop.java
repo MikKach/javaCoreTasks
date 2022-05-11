@@ -17,7 +17,7 @@ public class MenuShop {
 
     }
 
-    public void menuExit(){
+    private void menuExit(){
         try(ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("internetShop.bin"))) {
             objectOutputStream.writeObject(internetShop);
         } catch (FileNotFoundException e) {
