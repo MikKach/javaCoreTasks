@@ -45,6 +45,13 @@ public class TaskCollectors {
         System.out.println(stream6.distinct().map(p->p.toUpperCase()).collect(Collectors.toList()));
 
         Stream<String> stream7 = collection2.stream();
-        System.out.println(stream7.);
+        System.out.println(stream7.collect(Collectors.joining(":","<b>","<b>")));
+
+        Stream<String> stream8 = collection2.stream();
+        System.out.println(stream8.distinct().collect(Collectors.toMap(p->p.substring(0,1),p->p.substring(1,2))));
+
+        Stream<String> stream9 = collection2.stream();
+        System.out.println(stream9.collect(Collectors.groupingBy(p->p.substring(0,1))));
+
     }
 }

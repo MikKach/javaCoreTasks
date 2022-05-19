@@ -7,8 +7,8 @@ import java.io.IOException;
 
 public class Test3Cat {
     public static void main(String[] args) {
-        try(FileInputStream fileInputStream = new FileInputStream("/sysroot/home/user/JobMikola/Images/cat.jpg");
-        FileOutputStream fileOutputStream = new FileOutputStream("cat2.jpg")){
+        try(FileInputStream fileInputStream = new FileInputStream("/sysroot/home/user/JobMikola/Images/kitten.jpg!d");
+        FileOutputStream fileOutputStream = new FileOutputStream("kitten.jpg")){
             int a;
             while ((a=fileInputStream.read())!=-1){
 

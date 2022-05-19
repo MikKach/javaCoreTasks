@@ -15,7 +15,6 @@ public class People {
     private List<Hobby> hobby;
 
 
-
     public People(String name, int age, Gender sex, List<Hobby> hobby) {
         this.name = name;
         this.age = age;
@@ -30,6 +29,14 @@ public class People {
     }
 
     public People() {
+    }
+
+    public boolean isContains(People p) {
+        String s = p.getName().toUpperCase();
+        if (s.contains("a") && !s.contains("b")){
+            return true;
+        }
+            return false;
     }
 
     public String getName() {
