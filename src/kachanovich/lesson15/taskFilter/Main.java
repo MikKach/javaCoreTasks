@@ -13,7 +13,7 @@ public class Main {
         Hobby hobby3 = new Hobby("Squash", new Random().nextInt(0, 11));
 
         People people1 = new People("Mik", 19, Gender.MALE, List.of(hobby1, hobby2));
-        People people2 = new People("Stanb", 21, Gender.MALE, List.of(hobby1));
+        People people2 = new People("Steb", 21, Gender.MALE, List.of(hobby1));
         People people3 = new People("Stas", 22, Gender.MALE, List.of(hobby1, hobby3));
         People people4 = new People("Vika", 19, Gender.FEMALE, List.of(hobby2, hobby3));
         People people5 = new People("Jora", 24, Gender.MALE, List.of(hobby1, hobby2, hobby3));
@@ -23,10 +23,12 @@ public class Main {
         double average = peoples.stream().mapToInt(people -> people.getAge()).average().orElse(0);
         System.out.println(average);
 
-        List<People> hobPeopleAv = peoples.stream()
+        System.out.println("IT");
+       peoples.stream()
                 .filter(people -> people.getHobby().stream()             //создали новый поток Hobby и с ним работаем, по нему проверяем каждого юзика на сопадение хобби IT череъз anyMatch
                         .anyMatch(hobby -> hobby.getName().equals("IT")))
-                .toList();
+                .forEach(System.out::println);
+
         System.out.println("-----------------------------------------");
         peoples.stream().filter(p -> PeopleBirthdayInfo.isLeapYears(p.getAge())).forEach(System.out::println);
 
